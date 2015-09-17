@@ -1,0 +1,346 @@
+/*
+ Theme Name:   Twenty Thirteen Child
+ Theme URI:    http://mrteacherkevin.com
+ Description:  Twenty Thirteen Child Theme
+ Author:       Kevin Briggs
+ Author URI:   http://mrteacherkevin.com
+ Template:     twentythirteen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twenty-fifteen-child
+*/
+
+@import url("../twentythirteen/style.css");
+
+/*Header*/
+#mtktitle{
+	padding-top: 35px;
+	width: 750px;
+}
+
+#mtktitle img {
+	width: 750px;
+	height: 90px;
+	max-width: 90%;
+	float: left;
+}
+
+.site-header .home-link{
+	display: inline-block;
+	min-height: 0px;
+	max-width: 50%;
+}
+
+
+.site-description {
+
+	margin-left: 80px;
+	margin-bottom: 30px;
+	margin-top: 10px;
+	text-shadow: black;
+	}
+
+
+
+/* Login and profile */
+
+.login_profile{
+	float: right;
+	margin-top: 70px;
+	margin-right: 40px;
+}
+
+.login_profile input[type="submit"]{
+	margin-top: 10px;
+	margin-right: 15px;
+	float: right;
+	padding-left: 20px;
+	padding-right:20px;
+	padding-top: 9px;
+	padding-bottom: 8px;
+	background: none;
+	background-color: #db572f;
+	border-bottom: none;
+
+
+}
+
+.login_profile input[type="text"],
+.login_profile input[type="password"]
+{
+	color: #808080;
+	font-style: italic;
+}
+
+#masthead{
+	background-color: #00e3fc;
+}
+
+/* Navbar */
+.navbar {
+	background-color: #FFFF47;
+}
+
+/* 
+Nav-Menu
+Top Hover */
+.main-navigation{
+	margin-left: 30px;
+}
+.nav-menu ul a,
+.nav-menu li:hover > a,
+.nav-menu li a:hover,
+.nav-menu li:focus > a,
+.nav-menu li a:focus {
+	background-color: #660066;
+	color: #fff;
+}
+
+
+/* Hover Dropdown */
+.nav-menu ul ul a:focus {
+	background-color: #db572f;
+}
+
+/* Content on right side of nav menu*/
+#right_menu ul{
+	float: right;
+	margin-right: 55px;
+	margin-top: 9px;
+	margin-bottom: 0px;
+}
+
+#right_menu ul li{
+	display: inline;
+	margin-right: 15px;
+}
+
+#right_menu a,
+#right_menu a:visited{
+	color: black;
+}
+#right_menu img{
+	width: 25px;
+	height: 25px;
+	padding-bottom: 2px;	
+}
+
+
+/* Container*/
+.container{
+	width: 750px;
+	background-color: white;
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-top: 30px;
+	max-width: 79%;
+	border-radius: 10px;
+	margin-bottom: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+
+}
+
+/*Final checklist styling*/
+
+.final_checkbox{
+	margin-left: 19px;
+}
+
+.final_checkbox p{
+	display: inline;
+	margin-left: 5px;
+}
+
+.site {
+	background-color: #CEEFFF;
+}
+
+
+.entry-header,
+.entry-content,
+.entry-summary,
+.entry-meta {
+	margin: 0 auto;
+	max-width: none;
+	width: 100%;
+}
+
+
+
+
+
+/*Landing page styles */
+.landing_style {
+	width: 1000px;
+	height: 310px;
+	margin-left: 100px;
+	margin-right: 25px;
+	margin-bottom: 25px;
+	max-width: 88.88%;
+	padding: 15px;
+	float:left;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.landing_style img {
+	float: left;
+	height: 280px;
+	width:475 px;
+	margin-right: 15px;
+	max-width: 42.2222%;
+}
+
+
+.landing_style a{
+	font-size: 50px;
+	color: white;
+	line-height: 30px;
+	font-family: Verdana, sans-serif;
+	float: none;
+
+
+}
+.landing_style p {
+	margin-left: 10px;
+	color: white;
+	font-family: Verdana, sans-serif;
+}
+
+/*Colors for different subjects*/
+#scratch_color{
+	background-color: #006EB8;
+}
+
+#engineering_color{
+	background-color: #964396;
+}
+
+#av_color{
+
+	background-color: #00B85C;
+}
+
+#office_color {
+	background-color: #E64848;
+}
+
+#webdev_color {
+	background-color: #E68A2E;
+}
+
+
+.site-footer{
+	background-color: #85E085;
+}
+
+
+
+/* media queries */
+
+@media screen and (max-width: 1125px) and (min-width: 501px){
+	.landing_style{
+		margin-right: 6%;
+		margin-left: 6%;
+	}
+
+	#container{
+		margin-bottom: 5%
+	}
+
+}
+
+@media screen and (max-width: 500px){
+	#mtktitle img {
+		width: 100%;
+		height: 100%;
+}
+
+	#content .entry-header,
+	#content .entry-content,
+	#content .entry-summary,
+	#content footer.entry-meta,
+	#content .featured-gallery,
+	.search.sidebar .page-content,
+	.blog.sidebar .page-content,
+	.sidebar .post-navigation .nav-links,
+	.paging-navigation .nav-links,
+	#content .author-info,
+	.comments-area .comments-title,
+	.comments-area .comment-list,
+	.comments-area .comment-navigation,
+	.comment-respond,
+	.sidebar .site-info,
+	.sidebar .paging-navigation .nav-links {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+#scratch_color{
+	margin-top: 10px;
+}
+.landing_style {
+	max-width: 100%;
+	width: 100%;
+	margin-left: 0%;
+	margin-right: 0%;
+	margin-bottom: 0%;
+	padding: 0%;
+	border-radius: 0px 0px 0px 0px;
+	height: auto;
+}
+.landing_style img {
+	max-width: 97%;
+	margin-top: 5%;
+	margin-right: 3%;
+	margin-bottom: 10px;
+}
+.landing_style a{
+	font-size: 200%;
+
+}
+.landing_style p {
+	font-size: 100%;
+
+}
+
+
+.container{
+	max-width: 96%;
+	width: 96%;
+	margin-left: 2%;
+	margin-right: 2%;
+	border-radius: 0px;
+	margin-bottom: 30px;
+	padding-left: 4%;
+	padding-right: 4%;
+	border-radius: 10px;
+
+}
+
+.menu-toggle{
+	float: left;
+}
+
+.site-header,
+.home-link{
+	max-width: 100%;
+}
+
+/*Get rid of description and add margin on the bottom of the title*/
+.site-description{
+	display: none;
+}
+
+#mtktitle{
+	margin-bottom: 20px;
+	max-width: 100%;
+}
+
+
+}
+
+
+
+
