@@ -16,6 +16,7 @@
 <html class="ie ie8" <?php language_attributes(); ?>>
 <![endif]-->
 <!--[if !(IE 7) & !(IE 8)]><!-->
+<?php session_start(); ?>
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
