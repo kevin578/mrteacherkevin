@@ -46,7 +46,7 @@
 
 /* Login and profile */
 
-.login_profile{
+#loginform{
 	float: right;
 	margin-top: 70px;
 	margin-right: 40px;
@@ -74,9 +74,39 @@
 	font-style: italic;
 }
 
+
+#profileForm{
+	float: right;
+	background-color: #4cb304;
+	margin-top: 50px;
+	margin-right: 70px;
+	padding-top: 8px;
+	padding-left: 8px;
+	padding-bottom: 8px;
+	width: 200px;
+	height: 100px;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Verdana;
+}
+
+#profileForm a {
+	color: #191919;
+}
+
+#profileForm p {
+	float: right;
+	padding-right: 30px;
+	font-size: 50px;
+
+}
+
 #masthead{
 	background-color: #00e3fc;
 }
+
+
 
 /* Navbar */
 .navbar {
