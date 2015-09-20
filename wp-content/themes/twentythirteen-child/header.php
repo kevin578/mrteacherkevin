@@ -37,6 +37,7 @@
 				<div id = "mtktitle"><img src ="http://mrteacherkevin.com/wp-content/uploads/2015/01/logo.png"alt="HTML5 Icon"></div>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</a>
+			<?php include ("loginProfile.php") ?>
 
 
 			<div id="navbar" class="navbar">
