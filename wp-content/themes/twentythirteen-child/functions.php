@@ -1,6 +1,6 @@
     <?php
 
-    function render($template, $values = [])
+function render($template, $values = [])
     {
         // if template exists, render it
         if (file_exists("$template"))
@@ -24,7 +24,7 @@
      * Because this function outputs an HTTP header, it
      * must be called before caller outputs any HTML.
      */
-    function redirect($destination)
+function redirect($destination)
     {
         // handle URL
         if (preg_match("/^https?:\/\//", $destination))
@@ -51,12 +51,18 @@
         exit;
     }
 
-function register_my_session()
-{
-  if( !session_id() )
-  {
-    session_start();
-  }
-}
 
+
+function logout()
+    {
+        // unset any session variables
+        $_SESSION = [];
+        // expire cookie
+        if (!empty($_COOKIE[session_name()]))
+        {
+            setcookie(session_name(), "", time() - 42000);
+        }
+        // destroy session
+        session_destroy();
+    }
 ?>
