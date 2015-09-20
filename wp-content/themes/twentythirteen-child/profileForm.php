@@ -1,6 +1,5 @@
 <?php
-$name = $name;
-
+session_start();
 echo "Hello $name";
 
 ?>

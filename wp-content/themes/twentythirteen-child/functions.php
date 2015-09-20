@@ -51,4 +51,12 @@
         exit;
     }
 
+function register_my_session()
+{
+  if( !session_id() )
+  {
+    session_start();
+  }
+}
+
 ?>
