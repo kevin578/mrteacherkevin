@@ -158,6 +158,24 @@ Top Hover */
 }
 
 
+/*Picture grid for subject pages (i.e. Scratch)*/
+
+.page_grid{
+	width: 950px;
+	margin-left: 50px;
+}
+
+.page_grid img{
+	width: 384px;
+	height: 216px;
+	margin: 25px;
+}
+
+.page_grid li{
+	display: inline;
+}
+
+
 /* Container*/
 .container{
 	width: 750px;

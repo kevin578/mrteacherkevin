@@ -16,7 +16,6 @@
 <html class="ie ie8" <?php language_attributes(); ?>>
 <![endif]-->
 <!--[if !(IE 7) & !(IE 8)]><!-->
-<?php session_start(); ?>
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
@@ -30,6 +29,7 @@
 	<![endif]-->
 	<?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
 	<div id="page" class="hfeed site">
 		<header id="masthead" class="site-header" role="banner">
@@ -37,7 +37,6 @@
 				<div id = "mtktitle"><img src ="http://mrteacherkevin.com/wp-content/uploads/2015/01/logo.png"alt="HTML5 Icon"></div>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</a>
-			<?php include ("loginProfile.php") ?>
 
 
 			<div id="navbar" class="navbar">
