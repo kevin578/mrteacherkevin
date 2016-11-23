@@ -39,7 +39,7 @@ function mtk_register_post_type(){
 	        'hierarchical'        => false,
 	        'has_archive'         => true,
 	        'query_var'           => true,
-	        'capability_type'     => 'post',
+	        'capability_type'     => 'page',
 	        'map_meta_cap'        => true,
 	        // 'capabilities' => array(),
 	        'rewrite'             => array( 
@@ -50,9 +50,6 @@ function mtk_register_post_type(){
 	        ),
 	        'supports'            => array( 
 	        	'title', 
-	        	'editor', 
-	        	'author', 
-	        	'custom-fields' 
 	        )
 	);
 	register_post_type( 'job_listing', $args );
