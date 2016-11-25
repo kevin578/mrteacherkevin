@@ -4,9 +4,11 @@
 
 		add_meta_box(
 		'mtk_box1',
-		"What am I doing?",
+		"Content Area",
 		'mtk_challenge_box1_callback',
-		'challenge_page'
+		'challenge_page',
+		'normal',
+		'core'
 	);
 }
 

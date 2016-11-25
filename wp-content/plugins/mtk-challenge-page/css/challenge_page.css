@@ -1,0 +1,40 @@
+#mtk_challengebox1 {
+	width: 100%;	
+}
+
+.mtk_challenge_input h1 {
+	margin-bottom: 10px;
+	font-size: 25px;
+
+}
+
+.mtk_challenge_input textarea {
+	padding: 7px;
+	margin-bottom: 20px;
+}
+
+.mtk_challenge_input p {
+	display: inline;
+}
+
+#plus_button {
+	margin-left: 10px;
+	margin-bottom: 20px;
+
+}
+
+
+.video_time_left {
+	margin-top: 5px;
+	width: 400px;	
+
+
+}
+
+.video_time_right {
+	margin-top: 5px;
+	margin-left: 25px;
+	width: 200px;
+
+
+}
