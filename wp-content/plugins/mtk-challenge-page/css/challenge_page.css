@@ -1,3 +1,5 @@
+
+
 #mtk_challengebox1 {
 	width: 100%;	
 }
@@ -17,24 +19,36 @@
 	display: inline;
 }
 
-#plus_button {
+.plus_button {
 	margin-left: 10px;
-	margin-bottom: 20px;
 
 }
 
-
 .video_time_left {
-	margin-top: 5px;
+	margin-top: 10px;
 	width: 400px;	
-
-
 }
 
 .video_time_right {
-	margin-top: 5px;
+	
 	margin-left: 25px;
 	width: 200px;
-
-
 }
+
+#skill_inputs {
+	margin-bottom: 15px;
+}
+
+.check_input_box {
+	width: 400px;
+	margin-top: 10px;
+}
+
+#check_input {
+	margin-bottom: 15px;
+}
+
+#video_embed_url {
+	width: 400px;	;
+}
+
