@@ -41,6 +41,9 @@ function mtk_register_challenge_page(){
 	        'query_var'           => true,
 	        'capability_type'     => 'page',
 	        'map_meta_cap'        => true,
+	        'show_in_rest'       => true,
+  			'rest_base'          => 'challenge_page',
+  			'rest_controller_class' => 'WP_REST_Posts_Controller',
 	        //'capabilities' => array(),
 	        'rewrite'             => array( 
 	        	'slug' => $slug,

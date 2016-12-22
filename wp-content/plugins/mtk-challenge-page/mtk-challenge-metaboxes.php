@@ -24,12 +24,14 @@ function mtk_challenge_box1_callback($post){
 
 <h1>What will I be making?</h1>
 <textarea name = 'mtk_challengebox1' rows = '3' id = 'mtk_challengebox1'>
+	
+
 	<?php if ( ! empty ( $mtk_stored_meta['mtk_challengebox1'] ) ) {
 					echo esc_attr( $mtk_stored_meta['mtk_challengebox1'][0] );
 				} ?>
 
 </textarea>
-
+<p id = "ajax_test"></p>
 <h1>How can I make this?</h1>
 <textarea name = 'mtk_challengebox2' id = 'mtk_challengebox2' rows = '3'>
 <?php 	
@@ -58,7 +60,7 @@ function mtk_challenge_box1_callback($post){
 
 <h1>Okay, I think I’m finished. What can I check to make sure?</h1>
 
-<?php> json_encode()   ?>
+
 
 <div id = "check_input"></div>
 

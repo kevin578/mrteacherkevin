@@ -5,15 +5,32 @@ var time_input = ['<input type = "text" class = "video_time_right" placeholder =
 var check_input = ['<input type = "text" class = "check_input_box" placeholder="Item to be checked">\
 					<input type = "button" value = "+" class = "plus_button" onclick = "add_check_input();">\
 					<input type = "button" value = "-" onclick="remove_check_input();")>'];
+var beforeSend = "beforeSend: function ( xhr ) {xhr.setRequestHeader( 'X-WP-Nonce', wpApiSettings.nonce );},"
 
 
 //displays one row on load
 window.onload = function() {
-var number_of_checks =  <?php echo('test') ?>
 render_skill_input();
 
 
+jQuery.ajax({
+	url: "http://localhost/mrteacherkevin/wp-json/wp/v2/challenge_page/1265",
+	method: 'PUT',
+	
+	beforeSend
 
+	data: 
+	{
+	"title": "Test  1"
+  	},
+
+	 success: function(data){
+        console.log(data.title.rendered);
+    },
+     error: function(){
+     	console.log("error");
+     } 
+});
 
 //for (var i; i < number_of_checks.legnth; i++) {
 render_check_input();
@@ -64,6 +81,8 @@ function render_check_input() {
 		jQuery("#check_input").append(check_input[i]);
 	}
 }
+
+
 
 
 

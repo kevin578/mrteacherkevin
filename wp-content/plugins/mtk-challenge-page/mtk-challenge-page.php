@@ -22,6 +22,9 @@ function mtk_admin_enqueue_scripts() {
 wp_enqueue_style( 'mtk-admin-css', plugins_url( 'css/challenge_page.css', __FILE__ ) );
 wp_enqueue_script('mtk_admin-js', plugins_url( 'js/admin_input.js', __FILE__ ) );
 wp_enqueue_script( 'jquery' );
+wp_localize_script( 'mtk_admin-js', 'wpApiSettings', array( 'root' => esc_url_raw( rest_url() ), 'nonce' => wp_create_nonce( 'wp_rest' ) ) );
+
+
 }
 
 
