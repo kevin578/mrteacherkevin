@@ -1,6 +1,10 @@
 <?php
 
-	function mtk_challenge_page() {
+
+function mtk_challenge_page() {
+
+	global $meta_content_1_object;
+
 
 		add_meta_box(
 		'mtk_box1',
@@ -10,6 +14,7 @@
 		'normal',
 		'core'
 	);
+
 }
 
 add_action( 'add_meta_boxes', 'mtk_challenge_page' );
@@ -18,86 +23,112 @@ add_action( 'add_meta_boxes', 'mtk_challenge_page' );
 
 function mtk_challenge_box1_callback($post){
 	wp_nonce_field( basename( __FILE__ ), 'mtk_jobs_nonce' );
-	$mtk_stored_meta = get_post_meta( $post->ID ); ?>
+	
+	$meta_content_1_object = '
+		{
+		"box1":{
+			"title":"What will I be making?",
+			"content":""
+		},
+		"box2":{
+			"title":"How can I make this?",
+			"content":"In order to make your own version of this you can follow along with the video below. Remember when you see a change you can make to your project, pause the video and go do it. Don’t watch the whole video and try to remember it!"
+			}, 
+		"skill_input":{
+			"title":"What if I want to find a specific skill in the video?",
+			"subtitle":"Here is a list of skills with the time they appear in the video.",
+			"skills":[""],
+			"time":[""]
+		},
+		"check_input":{
+			"title":"Okay, I think I’m finished. What can I check to make sure?",
+			"skill_checks":[""]
+		},
+		"video":{
+			"title":"You can find everything you need in the video below:",
+			"url":""
+		}
+		}';
+
+
+
+
+	add_post_meta($post->ID, 'meta_content_1', $meta_content_1_object, true);
+	//update_post_meta($post->ID, 'meta_content_1', $meta_content_1_object);
+
+	?>
+
+
 
 <div class = "mtk_challenge_input">
 
-<h1>What will I be making?</h1>
-<textarea name = 'mtk_challengebox1' rows = '3' id = 'mtk_challengebox1'>
-	
 
-	<?php if ( ! empty ( $mtk_stored_meta['mtk_challengebox1'] ) ) {
-					echo esc_attr( $mtk_stored_meta['mtk_challengebox1'][0] );
-				} ?>
 
+<div id = admin_box1>
+<h1 id ="box1_title" contenteditable = "true"></h1>
+
+<span id = "box1_check">
+<input type="checkbox" name = "box1_check" id = "box1_checkbox" value="box1">
+<label for = "box1_check">Hide</label>
+</span>
+
+
+<textarea name = 'mtk_challengebox1' rows = '3' id = 'box1_content'>
 </textarea>
-<p id = "ajax_test"></p>
-<h1>How can I make this?</h1>
-<textarea name = 'mtk_challengebox2' id = 'mtk_challengebox2' rows = '3'>
-<?php 	
-		if ( ! empty ( $mtk_stored_meta['mtk_challengebox2'] ) ) {
-					echo esc_attr( $mtk_stored_meta['mtk_challengebox2'][0] );
-				} 
-		else {
-			echo ('In order to make your own version of this you can follow along with the video below. Remember when you see a change you can make to your project, pause the video and go do it. Don’t watch the whole video and try to remember it!');
-		}
+</div>
 
-				?>
-	
+
+
+
+<div id = admin_box2>
+<h1 id = "box2_title" contenteditable = "true"></h1>
+
+<span id = "box2_check">
+<input type="checkbox" name = "box2_check" id = "box2_checkbox" value="box2">
+<label for = "box2_check">Hide</label>
+</span>
+
+<textarea name = 'mtk_challengebox2' id = 'box2_content' rows = '3'>
 </textarea>
+</div>
 
 
-<h1>What if I want to find a specific skill in the video?</h1>
+<div id = admin_box3>
+<h1 id = "skill_input_title" class = "mtk_challenge_input" contenteditable = "true"></h1>
+
+<span id = "box3_check">
+<input type="checkbox" name = "box3_check" id = "box3_checkbox" value="box3">
+<label for = "box3_check">Hide</label>
+</span>
 
 
-<p>Here is a list of skills with the time they appear in the video.</p>
-<input type = "button" value = "+" class = "plus_button" onclick = "add_skill_input();">
-<input type = "button" value = "-" onclick="remove_skill_input();")>
-
-
+<p id = "skill_input_subtitle" contenteditable = "true"></p>
+<span id = "skill_plus"></span>
 <div id = "skill_inputs"></div>
+</div>
 
 
-<h1>Okay, I think I’m finished. What can I check to make sure?</h1>
-
-
-
+<div id = admin_box4>
+<h1 id = "check_input_title"></h1>
 <div id = "check_input"></div>
+</div>
 
 
-<h1>You can find everything you need in the video below:</h1>
+<div id = admin_box5>
+<h1 id = "video_title" contenteditable = "true"></h1>
 <input type = "text" id = "video_embed_url" placeholder="video embed url">
+</div>
+
 
 
 </div>
 </html>
 
 <?php 
-
 }
-
-
-function mtk_meta_save( $post_id ) {
-	// Checks save status
-    $is_autosave = wp_is_post_autosave( $post_id );
-    $is_revision = wp_is_post_revision( $post_id );
-    $is_valid_nonce = ( isset( $_POST[ 'mtk_jobs_nonce' ] ) && wp_verify_nonce( $_POST[ 'mtk_jobs_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
-    //Exits script depending on save status
-    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
-        return;
-    }
-    if ( isset( $_POST[ 'mtk_challengebox1' ] ) ) {
-    	update_post_meta( $post_id, 'mtk_challengebox1', sanitize_text_field( $_POST[ 'mtk_challengebox1' ] ) );
-    }
-    if ( isset( $_POST[ 'mtk_challengebox2' ] ) ) {
-    	update_post_meta( $post_id, 'mtk_challengebox2', sanitize_text_field( $_POST[ 'mtk_challengebox2' ] ) );
-    }
-    //if ( )
- }
-
-  add_action( 'save_post', 'mtk_meta_save' ); 
- 
 ?>
+
+
 
 
 
