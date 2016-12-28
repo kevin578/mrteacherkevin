@@ -1,7 +1,8 @@
 
 
 
-#box1_title, #box2_title, #skill_input_title {
+#box1_title, #box2_title, #skill_input_title, #check_input_title,
+#video_title, #skill_input_subtitle {
 	display: inline-block;
 }
 
@@ -14,14 +15,13 @@
 	margin-top: 10px;
 }
 
-#box1_check, #box2_check, #box3_check {
+#box1_check, #box2_check, #box3_check, #box4_check, #box5_check {
 	float: right;
 	margin-top: 20px;
 }
 
+#box5_check {
 
-#skill_input_subtitle {
-	display: inline-block;
 }
 
 

@@ -69,7 +69,7 @@ function mtk_challenge_box1_callback($post){
 
 <span id = "box1_check">
 <input type="checkbox" name = "box1_check" id = "box1_checkbox" value="box1">
-<label for = "box1_check">Hide</label>
+<label for = "box1_check"></label>
 </span>
 
 
@@ -85,7 +85,7 @@ function mtk_challenge_box1_callback($post){
 
 <span id = "box2_check">
 <input type="checkbox" name = "box2_check" id = "box2_checkbox" value="box2">
-<label for = "box2_check">Hide</label>
+<label for = "box2_check"></label>
 </span>
 
 <textarea name = 'mtk_challengebox2' id = 'box2_content' rows = '3'>
@@ -98,7 +98,7 @@ function mtk_challenge_box1_callback($post){
 
 <span id = "box3_check">
 <input type="checkbox" name = "box3_check" id = "box3_checkbox" value="box3">
-<label for = "box3_check">Hide</label>
+<label for = "box3_check"></label>
 </span>
 
 
@@ -109,13 +109,25 @@ function mtk_challenge_box1_callback($post){
 
 
 <div id = admin_box4>
-<h1 id = "check_input_title"></h1>
+<h1 id = "check_input_title" contenteditable = "true"></h1>
+
+<span id = "box4_check">
+<input type="checkbox" name = "box4_check" id = "box4_checkbox" value="box4">
+<label for = "box4_check"></label>
+</span>
+
 <div id = "check_input"></div>
 </div>
 
 
 <div id = admin_box5>
 <h1 id = "video_title" contenteditable = "true"></h1>
+
+<span id = "box5_check">
+<input type="checkbox" name = "box5_check" id = "box5_checkbox" value="box5">
+<label for = "box5_check"></label>
+</span>
+
 <input type = "text" id = "video_embed_url" placeholder="video embed url">
 </div>
 

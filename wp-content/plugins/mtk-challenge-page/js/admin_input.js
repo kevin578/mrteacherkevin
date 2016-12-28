@@ -5,7 +5,9 @@ jQuery( document ).ready(function() {
 
 hide_button("#box1_check", box1_checkbox, "#box1_title", "#box1_content");
 hide_button("#box2_check", box2_checkbox, "#box2_title", "#box2_content");
-hide_button("#box3_check", box3_checkbox, "#skill_input_title", "#skill_input_subtitle", "#skill_inputs");
+hide_button("#box3_check", box3_checkbox, "#skill_input_title", "#skill_input_subtitle", "#skill_inputs", "#skill_plus");
+hide_button("#box4_check", box4_checkbox, "#check_input_title", "#check_input");
+hide_button("#box5_check", box5_checkbox, "#video_title", "#video_embed_url");
 
 
 });
@@ -16,15 +18,26 @@ hide_button("#box3_check", box3_checkbox, "#skill_input_title", "#skill_input_su
 
 function hide_button(click_id, check_id, title, content) {
 
+var argument_array = [];
+
+for (var i = 0; i < arguments.length; i++) {
+	argument_array[i] = arguments[i];
+}
+
 jQuery(click_id).click(function(){
+	
+
+	
+
 	if (check_id.checked) {
 		jQuery(title).css("color", "#dbdbdb");
 		jQuery(title).attr('contenteditable','false');
 		jQuery(content).css("display", "none");
 
-		if (arguments.length > 4) {
-		for (var i = 4; i < arguments.length; i++) {
-			jQuery(arguments[i]).css("display", "none");
+		if (argument_array.length > 4) {
+		console.log(argument_array.length);
+		for (var i = 4; i < argument_array.length; i++) {
+			jQuery(argument_array[i]).css("display", "none");
 		}
 	}
 	}
@@ -33,9 +46,9 @@ jQuery(click_id).click(function(){
 		jQuery(title).attr('contenteditable','true');
 		jQuery(content).css("display", "");
 
-		if (arguments.length > 4) {
-		for (var i = 4; i < arguments.length; i++) {
-			jQuery(arguments[i]).css("display", "");
+		if (argument_array.length > 4) {
+		for (var i = 4; i < argument_array.length; i++) {
+			jQuery(argument_array[i]).css("display", "");
 		}
 	}
 
