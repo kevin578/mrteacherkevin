@@ -37,6 +37,10 @@ jQuery.ajax({
             render_check_input();
             jQuery('#video_title').html(mtk_challenge_boxes.video.title);
             jQuery('#video_embed_url').val( mtk_challenge_boxes.video.url );
+            render_checks();
+
+
+
     },
      error: function(){
      	jQuery('#mtkchallengebox1').html("Couldn't load data"); 

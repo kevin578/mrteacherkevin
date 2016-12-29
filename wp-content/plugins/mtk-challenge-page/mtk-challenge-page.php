@@ -12,7 +12,6 @@ if (! defined('ABSPATH')){
 }
 
 
-
 require (  plugin_dir_path(__FILE__) . 'mtk-challenge-cpt.php');  
 require (  plugin_dir_path(__FILE__) . 'mtk-rest-api-registration.php'); 
 require (  plugin_dir_path(__FILE__) . 'mtk-challenge-metaboxes.php'); 
@@ -21,7 +20,9 @@ require (  plugin_dir_path(__FILE__) . 'mtk-challenge-metaboxes.php');
 
 function mtk_admin_enqueue_scripts() {
 
-global $post;
+global $post, $typenow;
+
+if ($typenow == 'challenge_page') {
 
 wp_enqueue_style( 'mtk-admin-css', plugins_url( 'css/challenge_page.css', __FILE__ ) );
 wp_enqueue_script('mtk_admin-js', plugins_url( 'js/admin_input.js', __FILE__) );
@@ -34,6 +35,7 @@ wp_localize_script('ajax-js', 'mtk_challenge_boxes', $meta_content_1_object);
 
 }
 
+}
 add_action( 'admin_enqueue_scripts', 'mtk_admin_enqueue_scripts' );
 
 

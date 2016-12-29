@@ -4,6 +4,7 @@
 #box1_title, #box2_title, #skill_input_title, #check_input_title,
 #video_title, #skill_input_subtitle {
 	display: inline-block;
+
 }
 
 #skill_input_title, #check_input_title, #video_title {
@@ -15,14 +16,33 @@
 	margin-top: 10px;
 }
 
-#box1_check, #box2_check, #box3_check, #box4_check, #box5_check {
-	float: right;
+
+
+.mtk_challenge_input input[type="checkbox"] {
+    display:none;
+}
+
+
+.mtk_challenge_input input[type="checkbox"] + label {
+    display:inline-block;
+    width:10px;
+    height:10px;
+    vertical-align:middle;
+ 	background:  url(http://localhost/mrteacherkevin/wp-content/uploads/2016/12/check.png);
+   	background-size: contain;
+    cursor:pointer;
+    float: right;
 	margin-top: 20px;
 }
 
-#box5_check {
+.mtk_challenge_input input[type="checkbox"]:checked + label {
+	background: url(http://localhost/mrteacherkevin/wp-content/uploads/2016/12/x.png);
+	background-size: contain;
+
 
 }
+
+
 
 
 .plus_button {
@@ -51,6 +71,9 @@
 #video_embed_url {
 	width: 400px;	;
 }
+
+
+
 
 
 
