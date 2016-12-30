@@ -2,7 +2,7 @@
 
 
 #box1_title, #box2_title, #skill_input_title, #check_input_title,
-#video_title, #skill_input_subtitle {
+#video_title, #skill_input_subtitle, .extra_box_title {
 	display: inline-block;
 
 }
@@ -11,12 +11,43 @@
 	margin-bottom: 5px;
 }
 
-#box1_content, #box2_content {
+#box1_content, #box2_content, .extra_box_content {
 	width: 100%;	
+	margin-top: 10px;
+	padding: 8px;
+}
+
+.remove_boxes {
+	float: right;
 	margin-top: 10px;
 }
 
 
+
+#add_box {
+	background: #0085ba;
+	color: white;
+	border: none;
+	font-size: 13px;
+	line-height: 1;
+	box-shadow: 0 1px 0 #006799;
+	cursor: pointer;
+	height: 25px;
+	border-radius: 2px;
+
+}
+
+
+.remove_boxes, .plus_button, .minus_button {
+	background: #0085ba;
+	color: white;
+	border: none;
+	width: 25px;
+	line-height: 1;
+	box-shadow: 0 1px 0 #006799;
+	cursor: pointer;
+	border-radius: 2px;
+}  
 
 .mtk_challenge_input input[type="checkbox"] {
     display:none;
@@ -47,8 +78,10 @@
 
 .plus_button {
 	margin-left: 10px;
+	margin-right: 5px;
 
 }
+
 
 
 .video_time_left {
@@ -79,7 +112,8 @@
 
 
 #admin_box1, #admin_box2, #admin_box3,
-#admin_box4, #admin_box5 {
+#admin_box4, #admin_box5, #extra_boxes,
+#add_box {
 	margin-top: 20px;
 }
 

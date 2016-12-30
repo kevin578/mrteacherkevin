@@ -4,7 +4,6 @@
 
 function render_checks() {
 
-
 hide_button(box1_check, "#box1_check", "#box1_title", "#box1_content");
 hide_button(box2_check, "#box2_check", "#box2_title", "#box2_content");
 hide_button(box3_check, "#box3_check", "#skill_input_title", "#skill_input_subtitle", "#skill_inputs", "#skill_plus");
@@ -18,14 +17,19 @@ hide_button(box5_check, "#box5_check", "#video_title", "#video_embed_url");
 
 function hide_button(check_id, click_id, title, content) {
 
+
+
 var argument_array = [];
 for (var i = 0; i < arguments.length; i++) {
 	argument_array[i] = arguments[i];
 }
 
 
+if (check_id.checked) { switch_css(); }
 
-jQuery(click_id).click(function(){
+jQuery(click_id).click(switch_css);
+
+function switch_css() {
 	
 	if (check_id.checked) {
 		jQuery(title).css("color", "#dbdbdb");
@@ -33,7 +37,6 @@ jQuery(click_id).click(function(){
 		jQuery(content).css("display", "none");
 		
 		if (argument_array.length > 4) {
-		console.log(argument_array.length);
 		for (var i = 4; i < argument_array.length; i++) {
 			jQuery(argument_array[i]).css("display", "none");
 		}
@@ -48,14 +51,14 @@ jQuery(click_id).click(function(){
 		
 		if (argument_array.length > 4) {
 		for (var i = 4; i < argument_array.length; i++) {
-			jQuery(argument_array[i]).css("display", "none");
+			jQuery(argument_array[i]).css("display", "");
 		}
 		}
 
 
 
 	}
-});
+}
 
 }
 
@@ -119,7 +122,7 @@ function render_skill_input() {
 		}
 
 		if (i == 1){
-			jQuery("#skill_plus").append('<input type = "button" value = "-" onclick="remove_skill_input();">');	
+			jQuery("#skill_plus").append('<input type = "button" class = "minus_button" value = "-" onclick="remove_skill_input();">');	
 		}
 
 		jQuery("#skill_inputs").append('<input type = "text" class = "video_time_left" id = "skill_input_id_'+
@@ -145,11 +148,43 @@ function render_check_input() {
 		}
 
 		if (i == 1) {
-			jQuery("#check_plus").after('<input type = "button" value = "-" onclick="remove_check_input();">');
+			jQuery("#check_plus").after('<input type = "button" class = "minus_button" value = "-" onclick="remove_check_input();">');
 		}
 
 	}
 
+}
+
+function add_extra_boxes(){
+
+
+	for (var i = 0; i < mtk_challenge_boxes.extra_boxes.title.length; i++) {
+		mtk_challenge_boxes.extra_boxes.title[i] = jQuery("#extra_title_" + i).html();
+		mtk_challenge_boxes.extra_boxes.content[i] = jQuery("#extra_content_" + i).val();
+	}
+	mtk_challenge_boxes.extra_boxes.title.push('Title');
+	mtk_challenge_boxes.extra_boxes.content.push('');
+
+	render_extra_boxes();
+}
+
+function remove_extra_boxes(value){
+	mtk_challenge_boxes.extra_boxes.title.splice(value, 1);
+	render_extra_boxes();
+}
+
+
+function render_extra_boxes() {
+
+	jQuery('#extra_boxes').html('');
+
+	for (var i = 0; i < mtk_challenge_boxes.extra_boxes.title.length; i++) {
+	jQuery("#extra_boxes").append('<h1 class = "extra_box_title" contenteditable = "true" id = "extra_title_' + i +'">'+ 
+	mtk_challenge_boxes.extra_boxes.title[i] +'</h1>');
+	jQuery("#extra_boxes").append('<input type = "button" class = "remove_boxes" value = "x" onclick = "remove_extra_boxes('+ i +')">');
+	jQuery("#extra_boxes").append('<textarea id = "extra_content_' + i +'" class = "extra_box_content" rows = "3">' + mtk_challenge_boxes.extra_boxes.content[i] + '</textarea>');
+	
+}
 }
 
 
