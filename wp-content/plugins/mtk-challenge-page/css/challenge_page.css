@@ -1,4 +1,31 @@
 
+/* Menu CSS */
+
+.mtk_menu_item {
+
+	background: #0085ba;
+	border: 1px solid #0085ba;
+	color: #fff;
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	border-radius: 2px;
+	vertical-align: middle;
+	margin-right: 10px;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+	box-shadow: 0 1px 0 #006799;
+}
+
+ .selected_menu_item {
+	background: #fff;
+	color: #0085ba;
+}
+
+
+
+/* Main admin CSS */
 
 
 #box1_title, #box2_title, #skill_input_title, #check_input_title,
@@ -11,7 +38,7 @@
 	margin-bottom: 5px;
 }
 
-#box1_content, #box2_content, .extra_box_content {
+#box1_content, #box2_content, .extra_box_content, .question_text {
 	width: 100%;	
 	margin-top: 10px;
 	padding: 8px;
@@ -74,8 +101,6 @@
 }
 
 
-
-
 .plus_button {
 	margin-left: 10px;
 	margin-right: 5px;
@@ -105,17 +130,36 @@
 	width: 400px;	;
 }
 
-
-
-
-
-
-
 #admin_box1, #admin_box2, #admin_box3,
 #admin_box4, #admin_box5, #extra_boxes,
-#add_box {
+#add_box, #quiz_header {
 	margin-top: 20px;
 }
+
+/* Quiz CSS */
+
+#add_question {
+	margin-top: 20px;	
+}
+
+#dropdownMenuButton{	
+	background: #0085ba;
+	color: #fff;
+	line-height: .6;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.dropdown-item {
+	cursor: pointer;
+
+}
+
+.quiz_titles {
+	font-size: 20px;
+	margin-top: 20px;
+}
+
 
 
 
