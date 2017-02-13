@@ -4,8 +4,7 @@
 var post_id = get_post_id.post_id;
 
 var mtk_challenge_boxes;
-
-
+var mtk_quiz_questions = [];
 //once page is loaded, get content with ajax
 
 jQuery( document ).ready(function() {

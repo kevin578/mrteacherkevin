@@ -184,12 +184,59 @@ function render_extra_boxes() {
 	jQuery("#extra_boxes").append('<input type = "button" class = "remove_boxes" value = "x" onclick = "remove_extra_boxes('+ i +')">');
 	jQuery("#extra_boxes").append('<textarea id = "extra_content_' + i +'" class = "extra_box_content" rows = "3">' + mtk_challenge_boxes.extra_boxes.content[i] + '</textarea>');
 	
+	}
 }
+
+//quiz
+
+function add_text_question(){
+
+	var question = {
+		id: mtk_quiz_questions.length,
+		type: "Text",
+		question: "",
+		answer:""
+	} 
+
+	mtk_quiz_questions.push(question); 
+	render_text_question();
 }
 
 
 
+function render_text_question(){
 
+	jQuery("#mtk_quiz_questions").html("");
+
+	for(var i = 0; i < mtk_quiz_questions.length; i++) {
+		var question_num = i + 1;
+		
+
+		jQuery("#mtk_quiz_questions").append('<div id = "mtk_question_container_'+i+'" class = "mtk_question_container"></div>');
+		jQuery("#mtk_question_container_" + i).append('<input type = "button" id = "remove_question_'+question_num+'" class = "remove_question" value = "x" onclick = "remove_question('+ i +')">');
+		jQuery("#mtk_question_container_" + i).append('<div class = "quiz_titles">Question '+ question_num +'</div>');
+		jQuery("#mtk_question_container_" + i).append('<input type = "text" class = "question_text" id = "question' + question_num + '">');
+		jQuery("#mtk_question_container_" + i).append('<div class = "answer_titles"><em>Answer</em></div>');
+		jQuery("#mtk_question_container_" + i).append('<input type = "text" class = "answer_text" id = "answer_'+ question_num+'">')
+	}
+}
+
+function remove_question(value){
+	mtk_quiz_questions.splice(value, 1);
+	render_text_question();
+}
+
+
+
+/*<div class = "quiz_titles" id = "question1_title">Question 1</div>
+<input type = "text" class = "question_text" id = "question_1">
+
+<div class = "quiz_titles" id = "answer1_title">Answer 1</div>
+<input type = "text" class = "question_text" id = "answer_1">
+
+'<input type = "text" class = "question_text" id = "question_' + i + 1'>'
+
+*/
 
 
 

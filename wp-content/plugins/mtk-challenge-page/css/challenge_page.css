@@ -23,6 +23,14 @@
 	color: #0085ba;
 }
 
+#add_box:hover, .remove_boxes:hover, 
+.plus_button:hover, .minus_button:hover,
+#quiz_mc:hover, #quiz_text:hover,
+.remove_question:hover
+ {
+	background: #008ec2;
+}
+
 
 
 /* Main admin CSS */
@@ -38,7 +46,8 @@
 	margin-bottom: 5px;
 }
 
-#box1_content, #box2_content, .extra_box_content, .question_text {
+#box1_content, #box2_content, .extra_box_content, .question_text,
+.answer_text {
 	width: 100%;	
 	margin-top: 10px;
 	padding: 8px;
@@ -65,7 +74,8 @@
 }
 
 
-.remove_boxes, .plus_button, .minus_button {
+.remove_boxes, .plus_button, .minus_button,
+.remove_question {
 	background: #0085ba;
 	color: white;
 	border: none;
@@ -138,27 +148,82 @@
 
 /* Quiz CSS */
 
-#add_question {
-	margin-top: 20px;	
-}
+/*dropdown menu*/
 
-#dropdownMenuButton{	
+
+#quiz_drop_button {
 	background: #0085ba;
-	color: #fff;
-	line-height: .6;
-	padding: 10px;
+	color: white;
+	border: none;
+	font-size: 13px;
+	line-height: 1;
+	box-shadow: 0 1px 0 #006799;
+	height: 25px;
+	width: 230px;
+	line-height: 25px;
+	border-radius: 2px;
 	margin-bottom: 20px;
-}
-
-.dropdown-item {
-	cursor: pointer;
-
-}
-
-.quiz_titles {
-	font-size: 20px;
 	margin-top: 20px;
+
 }
+
+#quiz_plus_button {
+	border-right: 1px solid white;
+	width: 25px;
+	text-align: center;
+	display: inline-block;
+	cursor: default;
+}
+
+.quiz_dropdown {
+	text-align: center;
+	display: inline-block;	
+}
+
+#quiz_text {
+	width: 70px;
+	padding-right: 5px;	
+	border-right: 1px solid white;
+	cursor: pointer;
+}
+
+#quiz_mc {
+	width: 120px;
+	cursor: pointer;
+}
+
+.answer_text {
+	margin-bottom: 15px;
+}
+
+.question_text {
+	margin-top: 15px;
+}
+
+.answer_titles {
+	margin-top: 15px;
+	color: #4c4c4c;
+}
+
+.mtk_question_container {
+
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 2px;
+	box-shadow: 1px 1px 10px -2px #969696;
+
+}
+
+.remove_question {
+	float: right;
+
+}
+
+
+
+
+
+
 
 
 

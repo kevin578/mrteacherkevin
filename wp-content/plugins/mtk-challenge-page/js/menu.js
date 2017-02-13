@@ -1,9 +1,5 @@
 jQuery( document ).ready(function() {
 
-
-
-
-
 	jQuery("#quiz_input").hide();
 	jQuery("#victory_input").hide();
 
@@ -44,7 +40,7 @@ jQuery("#mtk_menu_victory").click(function(){
 	jQuery("#victory_input").show();
 
 });
-
+ 
 
 
 
