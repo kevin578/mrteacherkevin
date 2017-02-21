@@ -216,8 +216,23 @@
 
 .remove_question {
 	float: right;
+}
+
+#mc_radio {	
+	margin-left: 15px;
 
 }
+
+.mtk_question_container .mc_choice {
+	margin-left: 5px;
+	margin-top: 10px; 
+	width: 300px;
+}
+
+#plus_mc {
+	margin-top: 10px;
+}
+
 
 
 
