@@ -1,0 +1,31 @@
+version: '3.3'
+
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     container_name: mrtk_legacy_db
+     restart: always
+     env_file:
+      - .env
+     networks:
+       - wpsite
+   wordpress:
+     depends_on:
+       - db
+     image: wordpress:latest
+     container_name: mrtk_legacy_wordpress
+     volumes: 
+        - './:/var/www/html'
+     ports:
+       - "8000:80"
+     restart: always
+     env_file:
+      - .env
+     networks:
+      - wpsite
+networks:
+   wpsite:
+volumes:
+   db_data:
